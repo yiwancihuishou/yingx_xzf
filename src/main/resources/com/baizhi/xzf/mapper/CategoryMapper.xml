@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.xzf.dao.CategoryMapper">
+<select id="queryAllOne" resultType="com.baizhi.xzf.vo.CategoryVo">
+    select a.id id, a.cate_name cateName,a.levels levels,a.parent_id parentId
+    from yx_category a
+    where levels=1
+</select>
+    <select id="queryAllTwo" resultType="com.baizhi.xzf.vo.CategoryVo" parameterType="String">
+    select a.id id, a.cate_name cateName,a.levels levels,a.parent_id parentId
+    from yx_category a
+    where parent_id=#{parentId}
+</select>
+</mapper>
