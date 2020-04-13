@@ -11,6 +11,7 @@ public class GitTest {
     
     @Test
     public void test1(){
-
+        int a=10;
+        int b=2;
     }
 }
